@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход & регистрация</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+ 
+            <div class="auth_block">
+                <div class="tabs">
+                    <div class="tab tab_active" id="login_tab">Вход</div>
+                    <div class="tab" id="register_tab">Регистрация</div>
+                </div>
+                {% if messages %}
+                  <div class="messages">
+                    {% for message in messages %}
+                      <div class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <div class="form" id="login_form">
+                    <form method="post" action="{% url 'auth' %}">
+                        {% csrf_token %}
+                        <input type="text" name="nickname_input" class="nickname_input" placeholder="Имя пользователя">
+                        <input type="password" name="password_input" class="password_input" placeholder="Пароль"><br>
+                        <input type="password" name="password_input_repeat" class="password_input_repeat input-animate" placeholder="Повторите пароль"><br>
+                        <div class="form_buttons">
+                          <button type="submit" name="action" value="login" class="button_sign_in">Войти</button>
+                          <button type="submit" name="action" value="register" class="button_register">Зарегистрироваться</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    <script src="{% static 'dashboard/js/dashboard.js' %}"></script>
+</body>
+</html>
