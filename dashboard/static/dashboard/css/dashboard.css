@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #48036F;
+}
+
+.auth_block {
+    max-width: 400px;
+    width: 90%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition-property: height;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    min-height: 399px; 
+}
+
+.tabs {
+    width: max-content;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #b3b3b3;
+    border-radius: 15px;
+}
+
+.tab_active {
+    padding: 5px 10px 5px 10px;
+    background-color: #7109AA;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.tab {
+    padding: 5px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.5rem;
+}
+
+/* #register_form {
+    display: none;
+    max-width: 400px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    font-family: "Noto Sans", sans-serif;
+} */
+
+
+#login_form {
+    
+    max-width: 400px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    font-family: "Noto Sans", sans-serif;
+}
+
+#login_form input {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 80%;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1rem;
+    border-style: none;
+    background-color: #d6d6d6;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+
+
+.button_sign_in,
+.button_register {
+    display: block;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+    width: max-content;
+    background-color: #7109AA;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.3rem;
+    color: whitesmoke;
+    border-radius: 10px;
+    border-style: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.input-animate {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.input-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form_buttons {
+  display: block; /* или просто удали это свойство */
+  margin-top: 10px;
+  text-align: center; /* если хочешь кнопки по центру */
+}
