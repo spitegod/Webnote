@@ -129,3 +129,29 @@
   margin-top: 10px;
   text-align: center; /* если хочешь кнопки по центру */
 }
+
+.messages {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-family: "Noto Sans", sans-serif;
+  border-color: #f44336;
+}
+
+.message.error {
+  background-color: #ffffff;
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.message.success {
+  background-color: #4CAF50;
+  color: white;
+}

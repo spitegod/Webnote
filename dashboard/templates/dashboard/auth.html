@@ -15,15 +15,22 @@
                     <div class="tab tab_active" id="login_tab">Вход</div>
                     <div class="tab" id="register_tab">Регистрация</div>
                 </div>
+                {% if messages %}
+                  <div class="messages">
+                    {% for message in messages %}
+                      <div class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
                 <div class="form" id="login_form">
-                    <form method="post">
+                    <form method="post" action="{% url 'auth' %}">
                         {% csrf_token %}
-                        <input type="text" class="nickname_input" placeholder="Имя пользователя">
-                        <input type="password" class="password_input" placeholder="Пароль"><br>
-                        <input type="password" class="password_input_repeat input-animate" placeholder="Повторите пароль"><br>
+                        <input type="text" name="nickname_input" class="nickname_input" placeholder="Имя пользователя">
+                        <input type="password" name="password_input" class="password_input" placeholder="Пароль"><br>
+                        <input type="password" name="password_input_repeat" class="password_input_repeat input-animate" placeholder="Повторите пароль"><br>
                         <div class="form_buttons">
-                          <button class="button_sign_in">Войти</button>
-                          <button class="button_register">Зарегистрироваться</button>
+                          <button type="submit" name="action" value="login" class="button_sign_in">Войти</button>
+                          <button type="submit" name="action" value="register" class="button_register">Зарегистрироваться</button>
                         </div>
                     </form>
                 </div>
